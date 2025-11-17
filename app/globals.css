@@ -128,11 +128,6 @@
     position: relative !important;
   }
   
-  [data-radix-select-content] {
-    z-index: 9999 !important;
-    position: fixed !important;
-  }
-  
   /* Ensure Portal container is above navbar */
   body > [data-radix-portal] {
     z-index: 99999 !important;
@@ -141,7 +136,6 @@
   /* Ensure select content appears above everything */
   [data-radix-select-content] {
     z-index: 99999 !important;
-    position: fixed !important;
   }
 }
 
