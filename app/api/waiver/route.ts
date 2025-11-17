@@ -55,10 +55,8 @@ export async function POST(request: Request) {
       .join('\n');
 
     // Send email to info@ths247.com
-    // Note: If using Resend's default domain, use 'onboarding@resend.dev' for testing
-    // For production, verify your domain in Resend and use your verified domain
     const { data, error } = await resend.emails.send({
-      from: 'Tactical Home Solutions <onboarding@resend.dev>',
+      from: 'Tactical Home Solutions <noreply@ths247.com>',
       to: ['info@ths247.com'],
       replyTo: email,
       subject: `New Waiver Submission - ${firstName} ${lastName}`,
@@ -135,7 +133,7 @@ Submission Date: ${new Date().toLocaleString()}
     // Also send confirmation email to the participant
     if (email) {
       await resend.emails.send({
-        from: 'Tactical Home Solutions <onboarding@resend.dev>',
+        from: 'Tactical Home Solutions <noreply@ths247.com>',
         to: [email],
         subject: 'Waiver Submission Confirmation - Tactical Home Solutions',
         html: `
