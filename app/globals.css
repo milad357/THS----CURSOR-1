@@ -121,5 +121,14 @@
   .rotate-slow {
     animation: rotate-slow 20s ease-in-out infinite;
   }
+  
+  /* Fix Radix UI Select dropdown z-index */
+  [data-radix-portal] {
+    z-index: 9999 !important;
+  }
+  
+  [data-radix-select-content] {
+    z-index: 9999 !important;
+  }
 }
 
