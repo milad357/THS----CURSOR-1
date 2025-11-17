@@ -125,10 +125,17 @@
   /* Fix Radix UI Select dropdown z-index */
   [data-radix-portal] {
     z-index: 9999 !important;
+    position: relative !important;
   }
   
   [data-radix-select-content] {
     z-index: 9999 !important;
+    position: fixed !important;
+  }
+  
+  /* Ensure Portal container is above navbar */
+  body > [data-radix-portal] {
+    z-index: 99999 !important;
   }
 }
 

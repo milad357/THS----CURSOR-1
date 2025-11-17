@@ -27,7 +27,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <AgeGate />
           <Navbar />
-          <main className="flex-grow relative z-10">
+          <main className="flex-grow relative">
             {children}
           </main>
           <Footer />
