@@ -32,7 +32,7 @@ const waiverFormSchema = z.object({
   }),
   // Address
   addressLine1: z.string().min(1, 'Address is required'),
-  addressLine2: z.string().optional(),
+  addressLine2: z.string().default(''),
   city: z.string().min(1, 'City is required'),
   state: z.string().min(1, 'State is required'),
   zip: z.string().min(1, 'Zip code is required'),
@@ -128,7 +128,7 @@ export default function WaiverPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const form = useForm<WaiverFormValues>({
+  const form = useForm({
     resolver: zodResolver(waiverFormSchema),
     defaultValues: {
       firstName: '',
@@ -153,7 +153,7 @@ export default function WaiverPage() {
       driversLicenseNumber: '',
       driversLicenseState: '',
       isAdult: false,
-      mediaConsent: undefined,
+      mediaConsent: undefined as 'allow' | 'deny' | undefined,
       emailOptIn: false,
       signatureConsent: false,
       ackFinalRead: false,
@@ -626,9 +626,9 @@ export default function WaiverPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-xl font-semibold text-white">Waiver Sections</CardTitle>
-              {form.formState.errors.sections && (
+              {form.formState.errors.sections && typeof form.formState.errors.sections === 'object' && 'message' in form.formState.errors.sections && (
                 <p className="text-sm text-destructive mt-2">
-                  {form.formState.errors.sections.message}
+                  {String(form.formState.errors.sections.message)}
                 </p>
               )}
             </CardHeader>
