@@ -39,7 +39,8 @@ export default function Contact() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to submit form');
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || 'Failed to submit form');
       }
 
       setSubmitted(true);
@@ -53,7 +54,8 @@ export default function Contact() {
       });
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('There was an error submitting your form. Please try again or contact us directly at info@ths247.com');
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      alert(`There was an error submitting your form: ${errorMessage}\n\nPlease try again or contact us directly at info@ths247.com`);
     } finally {
       setIsSubmitting(false);
       setTimeout(() => {
