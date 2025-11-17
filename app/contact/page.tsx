@@ -23,13 +23,26 @@ export default function Contact() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    
-    setTimeout(() => {
-      setSubmitted(false);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      setSubmitted(true);
       setFormData({
         name: '',
         email: '',
@@ -38,7 +51,15 @@ export default function Contact() {
         message: '',
         disclaimer: false,
       });
-    }, 3000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting your form. Please try again or contact us directly at info@ths247.com');
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    }
   };
 
   return (
@@ -169,8 +190,12 @@ export default function Contact() {
                   </Label>
                 </div>
 
-                <PrimaryButton type="submit" className="w-full md:w-auto md:min-w-[200px]">
-                  Submit Inquiry
+                <PrimaryButton 
+                  type="submit" 
+                  className="w-full md:w-auto md:min-w-[200px]"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
                 </PrimaryButton>
               </form>
             </Card>

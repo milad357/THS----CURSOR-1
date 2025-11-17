@@ -167,29 +167,34 @@ export default function WaiverPage() {
   const onSubmit = async (data: WaiverFormValues) => {
     setIsSubmitting(true);
     
-    // TODO: Replace with actual API call
-    // await fetch('/api/waiver', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(data),
-    // });
-    
-    console.log('Waiver submitted:', data);
-    
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    
-    setIsSubmitting(false);
-    setShowSuccess(true);
-    
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    // Reset form after success
-    setTimeout(() => {
-      form.reset();
-      setShowSuccess(false);
-    }, 10000);
+    try {
+      const response = await fetch('/api/waiver', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to submit waiver');
+      }
+
+      setShowSuccess(true);
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Reset form after success
+      setTimeout(() => {
+        form.reset();
+        setShowSuccess(false);
+      }, 10000);
+    } catch (error) {
+      console.error('Error submitting waiver:', error);
+      alert('There was an error submitting your waiver. Please try again or contact us directly at info@ths247.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
