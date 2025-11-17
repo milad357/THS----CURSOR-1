@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 210 20% 98%;
+    --card: 220 20% 6%;
+    --card-foreground: 210 10% 95%;
+    --border: 215 20% 20%;
+    --input: 220 20% 8%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 20% 8%;
+    --secondary-foreground: 210 10% 90%;
+    --muted: 220 20% 6%;
+    --muted-foreground: 215 10% 45%;
+    --accent: 220 20% 8%;
+    --accent-foreground: 210 10% 90%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 98%;
+    --ring: 0 84% 60%;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Tactical HUD Grid Pattern */
+  .hud-grid {
+    position: relative;
+  }
+  
+  .hud-grid::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+  }
+  
+  /* Scan line effect */
+  .scan-line {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scan-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(229, 57, 53, 0.1) 50%,
+      transparent 100%
+    );
+    animation: scan 8s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  @keyframes scan {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+  
+  /* Pulse animation */
+  @keyframes pulse-soft {
+    0%, 100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  
+  .pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+  
+  /* Watermark slow rotation */
+  @keyframes rotate-slow {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(1deg) scale(1.01);
+    }
+    100% {
+      transform: rotate(0deg) scale(1);
+    }
+  }
+  
+  .rotate-slow {
+    animation: rotate-slow 20s ease-in-out infinite;
+  }
+}
+

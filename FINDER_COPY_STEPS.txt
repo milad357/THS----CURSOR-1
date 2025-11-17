@@ -1,0 +1,34 @@
+═══════════════════════════════════════════════════════
+  COPY LOGO FILE USING FINDER (2 MINUTES)
+═══════════════════════════════════════════════════════
+
+Since Terminal can't access the Documents folder, use Finder:
+
+STEP 1: I've opened two Finder windows for you:
+   • Documents folder (your logo file)
+   • public folder (destination)
+
+STEP 2: Copy the file:
+   1. In Documents window, click on "Final Files-02.jpg"
+   2. Press Cmd+C (or right-click → Copy)
+   
+STEP 3: Paste 3 times in public folder:
+   1. Click in the public folder window
+   2. Press Cmd+V (first copy)
+   3. Press Cmd+V again (second copy)
+   4. Press Cmd+V again (third copy)
+
+STEP 4: Rename the files:
+   1. Click on the first copy → Press Enter → Type: logo-light.png
+   2. Click on the second copy → Press Enter → Type: logo-gray.png
+   3. Click on the third copy → Press Enter → Type: logo-dark.png
+
+STEP 5: Refresh your browser:
+   • Press Cmd+Shift+R (hard refresh)
+   • The logo should appear!
+
+═══════════════════════════════════════════════════════
+
+That's it! The logo will show up automatically.
+
+
