@@ -20,7 +20,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-40 bg-[#05070D]/95 backdrop-blur-md border-b border-white/5">
+    <nav className="fixed top-0 inset-x-0 z-30 bg-[#05070D]/95 backdrop-blur-md border-b border-white/5">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-3 md:px-4 lg:px-5 h-14 md:h-16">
         {/* Logo - Height: 30px mobile, 36px desktop */}
         <Link href="/" className="flex-shrink-0 flex items-center h-full overflow-hidden">
