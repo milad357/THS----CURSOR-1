@@ -136,6 +136,21 @@
   /* Ensure Portal container is above navbar */
   body > [data-radix-portal] {
     z-index: 99999 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+  }
+  
+  [data-radix-select-content] {
+    pointer-events: auto !important;
+  }
+  
+  /* Ensure no parent creates stacking context */
+  html, body {
+    position: relative;
   }
 }
 
