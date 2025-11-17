@@ -9,3 +9,5 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Auto-deploy on push to main branch
+
