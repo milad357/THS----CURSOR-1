@@ -27,7 +27,6 @@ export default function Services() {
               </div>
               <div className="shrink-0 text-left md:text-right">
                 <p className="text-2xl font-bold text-accent-red">$299</p>
-                <p className="text-sm text-text-muted">3.5 hours</p>
               </div>
             </div>
             <ul className="list-disc list-outside pl-5 text-sm text-text-secondary space-y-1 mt-2">
@@ -38,9 +37,8 @@ export default function Services() {
               <li>Recommended defensive tools and placement</li>
               <li>Personalized training roadmap</li>
             </ul>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mt-4 pt-3 border-t border-neutral-800/80">
+            <div className="mt-4 border-t border-neutral-800/80 pt-3">
               <MetaLabel>LEVEL: ALL LEVELS</MetaLabel>
-              <MetaLabel>DURATION: 3.5 HRS</MetaLabel>
             </div>
           </Card>
 
@@ -53,7 +51,6 @@ export default function Services() {
               </div>
               <div className="shrink-0 text-left md:text-right">
                 <p className="text-2xl font-bold text-accent-red">$499</p>
-                <p className="text-sm text-text-muted">4.5 hours</p>
                 <p className="text-xs text-text-muted">In-home or outdoor</p>
               </div>
             </div>
@@ -64,9 +61,8 @@ export default function Services() {
               <li>Communication & movement with family members</li>
               <li>Stress inoculation drills</li>
             </ul>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mt-4 pt-3 border-t border-neutral-800/80">
+            <div className="mt-4 border-t border-neutral-800/80 pt-3">
               <MetaLabel>LEVEL: INTERMEDIATE–ADVANCED</MetaLabel>
-              <MetaLabel>DURATION: 4.5 HRS</MetaLabel>
             </div>
           </Card>
 
@@ -81,7 +77,6 @@ export default function Services() {
                   <h3 className="min-w-0 text-base font-semibold text-white">Live Fire (Range)</h3>
                   <div className="shrink-0 text-left sm:text-right">
                     <p className="text-lg font-bold text-accent-red">$99/hr</p>
-                    <p className="text-xs text-text-muted">2-hour minimum</p>
                   </div>
                 </div>
                 <p className="text-xs text-text-muted">Fundamentals, accuracy, recoil control, and defensive application.</p>
@@ -99,7 +94,6 @@ export default function Services() {
                   <h3 className="min-w-0 text-base font-semibold text-white">At-Home Non-Firing / Dry-Fire Training</h3>
                   <div className="shrink-0 text-left sm:text-right">
                     <p className="text-lg font-bold text-accent-red">$74.99/hr</p>
-                    <p className="text-xs text-text-muted">2-hour minimum</p>
                   </div>
                 </div>
                 <p className="text-xs text-text-muted">Skill-building without live ammo, ideal for beginners and safety-focused sessions.</p>
@@ -111,9 +105,8 @@ export default function Services() {
                 </ul>
               </Card>
             </div>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mt-4 pt-3 border-t border-neutral-800/80">
+            <div className="mt-4 border-t border-neutral-800/80 pt-3">
               <MetaLabel>LEVEL: BEGINNER–INTERMEDIATE</MetaLabel>
-              <MetaLabel>DURATION: VARIABLE</MetaLabel>
             </div>
           </Card>
 
@@ -150,7 +143,6 @@ export default function Services() {
               </div>
               <div className="shrink-0 text-left md:text-right">
                 <p className="text-2xl font-bold text-accent-red">$250/person</p>
-                <p className="text-sm text-text-muted">7.5 hours</p>
                 <p className="text-xs text-text-muted">8–10 minimum participants</p>
               </div>
             </div>
@@ -160,9 +152,8 @@ export default function Services() {
               <li>Movement and target transitions</li>
               <li>Basic weapon retention concepts</li>
             </ul>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mt-4 pt-3 border-t border-neutral-800/80">
+            <div className="mt-4 border-t border-neutral-800/80 pt-3">
               <MetaLabel>LEVEL: ALL LEVELS</MetaLabel>
-              <MetaLabel>DURATION: 7.5 HRS</MetaLabel>
             </div>
           </Card>
 
@@ -175,7 +166,6 @@ export default function Services() {
               </div>
               <div className="shrink-0 text-left md:text-right">
                 <p className="text-2xl font-bold text-accent-red">$349/person</p>
-                <p className="text-sm text-text-muted">4 hours</p>
                 <p className="text-xs text-text-muted">Range</p>
               </div>
             </div>
@@ -191,9 +181,8 @@ export default function Services() {
               <li>Live-fire drills under fatigue and stress</li>
               <li>Static and movement shooting stations</li>
             </ul>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mt-4 pt-3 border-t border-neutral-800/80">
+            <div className="mt-4 border-t border-neutral-800/80 pt-3">
               <MetaLabel>LEVEL: ADVANCED</MetaLabel>
-              <MetaLabel>DURATION: 4 HRS</MetaLabel>
             </div>
           </Card>
 
