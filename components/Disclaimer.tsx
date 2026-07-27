@@ -1,8 +1,8 @@
 export default function Disclaimer() {
   return (
-    <section className="mt-12 border-t border-white/10 pt-6">
+    <section className="mt-12 border-t border-border/70 pt-6" aria-label="Legal disclaimer">
       <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="text-[11px] md:text-xs text-text-muted leading-relaxed text-center md:text-left space-y-3">
+        <div className="space-y-3 text-center text-xs leading-relaxed text-text-muted md:text-left md:text-sm">
           <p>
             Tactical Home Solutions ("T.H.S.") provides educational training based on hypothetical home-defense scenarios. T.H.S. does not provide legal advice, does not encourage violence, and is not responsible for how any individual applies concepts outside a controlled training environment.
           </p>
@@ -20,13 +20,10 @@ export default function Disclaimer() {
           </p>
           
           <p>
-            <span className="text-text-secondary underline cursor-pointer hover:text-text-primary transition-colors">
-              Full Terms & Conditions available upon request.
-            </span>
+            Full Terms &amp; Conditions are available upon request.
           </p>
         </div>
       </div>
     </section>
   );
 }
-

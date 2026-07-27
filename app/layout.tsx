@@ -23,11 +23,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col bg-background hud-grid">
+      <body className="flex min-h-screen min-h-dvh flex-col bg-background hud-grid">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <a
+            href="#main-content"
+            className="sr-only z-50 rounded-sm bg-background px-4 py-3 text-sm font-semibold text-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:outline-none focus:ring-2 focus:ring-accent-red focus:ring-offset-2 focus:ring-offset-background"
+          >
+            Skip to main content
+          </a>
           <AgeGate />
           <Navbar />
-          <main className="flex-grow relative">
+          <main id="main-content" tabIndex={-1} className="relative flex-grow">
             {children}
           </main>
           <Footer />
@@ -37,4 +43,3 @@ export default function RootLayout({
     </html>
   );
 }
-

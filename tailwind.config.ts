@@ -16,6 +16,10 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         primary: {
@@ -43,12 +47,12 @@ const config: Config = {
         'bg-base': '#05070b',
         'bg-elevated': '#0c0f14',
         'bg-card': '#0c0f14',
-        'accent-red': '#ef4444',
-        'accent-muted': '#FF6F61',
+        'accent-red': '#f87171',
+        'accent-muted': '#fca5a5',
         'text-primary': '#f9fafb',
         'text-secondary': '#d1d5db',
-        'text-muted': '#9CA3AF',
-        'border-subtle': '#1f2933',
+        'text-muted': '#aab2bd',
+        'border-subtle': '#3f4a59',
       },
       borderRadius: {
         lg: "0.75rem",
@@ -63,4 +67,3 @@ const config: Config = {
   plugins: [require("tailwindcss-animate")],
 };
 export default config;
-

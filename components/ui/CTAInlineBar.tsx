@@ -1,5 +1,5 @@
 import { PrimaryButton, SecondaryButton } from './Button';
-import THSCard from './THSCard';
+import Card from './Card';
 import { cn } from '@/lib/utils';
 
 interface CTAInlineBarProps {
@@ -16,27 +16,27 @@ export default function CTAInlineBar({
   className = ''
 }: CTAInlineBarProps) {
   return (
-    <div className={cn('mt-8', className)}>
-      <THSCard className="max-w-3xl mx-auto rounded-xl bg-[#0C111C] border-neutral-800/60 px-4 md:px-5 py-3 md:py-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-[0_18px_40px_rgba(0,0,0,0.85)]" hover={false}>
-        <div className="flex flex-col gap-1">
-          <h3 className="text-sm md:text-base font-semibold text-white">{title}</h3>
-          <p className="text-xs md:text-sm text-muted-foreground">{description}</p>
+    <div data-contact-cta className={cn('mt-8', className)}>
+      <Card className="mx-auto flex max-w-3xl flex-row flex-wrap items-center gap-4 rounded-xl border-border/70 bg-[#0C111C] px-4 py-4 shadow-[0_18px_40px_rgba(0,0,0,0.85)] md:px-5" hover={false}>
+        <div className="min-w-0 flex-[999_1_20rem]">
+          <h2 className="text-sm md:text-base font-semibold text-white">{title}</h2>
+          <p className="mt-1 break-words text-sm leading-relaxed text-muted-foreground">{description}</p>
         </div>
-        <div className="flex items-center gap-2 w-full sm:w-auto">
+        <div className="flex min-w-0 max-w-sm flex-[1_1_13rem] items-center gap-2">
           <PrimaryButton 
             href={`tel:${phone}`}
-            className="flex-1 sm:flex-none px-4 py-2 text-xs md:text-sm"
+            className="min-w-0 flex-1 px-4 text-sm"
           >
             Call Now
           </PrimaryButton>
           <SecondaryButton 
             href={`sms:${phone}`}
-            className="flex-1 sm:flex-none px-4 py-2 text-xs md:text-sm"
+            className="min-w-0 flex-1 px-4 text-sm"
           >
             Text Us
           </SecondaryButton>
         </div>
-      </THSCard>
+      </Card>
     </div>
   );
 }

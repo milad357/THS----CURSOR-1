@@ -8,9 +8,19 @@ interface LogoProps {
   variant?: 'light' | 'dark' | 'gray';
   width?: number;
   className?: string;
+  alt?: string;
+  decorative?: boolean;
+  priority?: boolean;
 }
 
-export default function Logo({ variant, width = 150, className = '' }: LogoProps) {
+export default function Logo({
+  variant,
+  width = 150,
+  className = '',
+  alt = 'T.H.S. Tactical Home Solutions',
+  decorative = false,
+  priority = false,
+}: LogoProps) {
   const { theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [imgError, setImgError] = useState(false);
@@ -41,6 +51,9 @@ export default function Logo({ variant, width = 150, className = '' }: LogoProps
       <div 
         className={`inline-block ${className}`} 
         style={{ width: `${width}px` }}
+        role={decorative ? undefined : 'img'}
+        aria-label={decorative ? undefined : alt}
+        aria-hidden={decorative || undefined}
       >
         <span className="text-xl font-bold text-white">
           T.H.S. <span className="text-red-600">Tactical Home Solutions</span>
@@ -49,19 +62,23 @@ export default function Logo({ variant, width = 150, className = '' }: LogoProps
     );
   }
 
-  // Logo aspect ratio: 2501x1255 = ~2:1 ratio
-  const aspectRatio = 2501 / 1255; // ~1.99
+  // Preserve the transparent wordmark's native dimensions.
+  const aspectRatio = 1200 / 601;
   const height = Math.round(width / aspectRatio);
 
   return (
     <div className={`inline-block ${className}`} style={{ width: `${width}px`, maxWidth: '100%', background: 'transparent' }}>
       <Image
         src={logoPath}
-        alt="T.H.S. Tactical Home Solutions"
+        alt={decorative ? '' : alt}
+        aria-hidden={decorative || undefined}
         width={width}
         height={height}
-        className="object-contain w-full h-full"
-        priority
+        className="block h-full w-full select-none object-contain"
+        priority={priority}
+        loading={priority ? undefined : 'lazy'}
+        sizes={`${width}px`}
+        draggable={false}
         style={{ width: '100%', height: '100%', objectFit: 'contain', background: 'transparent' }}
         onError={() => setImgError(true)}
         unoptimized={process.env.NODE_ENV === 'development'}
@@ -69,4 +86,3 @@ export default function Logo({ variant, width = 150, className = '' }: LogoProps
     </div>
   );
 }
-

@@ -9,7 +9,7 @@ interface MetaLabelProps {
 export default function MetaLabel({ children, className = '' }: MetaLabelProps) {
   return (
     <div className={cn(
-      'text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-mono',
+      'font-mono text-xs font-medium uppercase leading-5 tracking-[0.14em] text-muted-foreground',
       className
     )}>
       {children}

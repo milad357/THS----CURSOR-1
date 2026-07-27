@@ -23,8 +23,8 @@ export default function Home() {
             <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white"></div>
           </div>
           {/* Animated Watermark */}
-          <div className="opacity-[0.03] blur-[3px] w-[390px] md:w-[480px] rotate-slow">
-            <Logo width={480} variant="dark" />
+          <div className="opacity-[0.03] blur-[3px] w-[390px] md:w-[480px] rotate-slow" aria-hidden="true">
+            <Logo width={480} variant="dark" decorative />
           </div>
         </div>
 
@@ -62,31 +62,32 @@ export default function Home() {
       {/* Quick Pillars / Value Props */}
       <section className="bg-bg-base">
         <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <h2 className="sr-only">Why choose Tactical Home Solutions</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             <div className="bg-bg-card border border-white/5 rounded-xl p-4 md:p-5 flex flex-col gap-2 shadow-[0_18px_40px_rgba(0,0,0,0.7)]/40 hover:border-white/15 hover:-translate-y-[2px] hover:shadow-[0_22px_50px_rgba(0,0,0,0.9)] transition-all duration-200">
               <h3 className="text-sm md:text-base font-semibold text-white">Real-World Scenarios</h3>
-              <p className="text-xs md:text-sm text-text-muted leading-relaxed">
+              <p className="text-sm text-text-muted leading-relaxed">
                 Training based on realistic home-invasion and high-stress situations.
               </p>
             </div>
 
             <div className="bg-bg-card border border-white/5 rounded-xl p-4 md:p-5 flex flex-col gap-2 shadow-[0_18px_40px_rgba(0,0,0,0.7)]/40 hover:border-white/15 hover:-translate-y-[2px] hover:shadow-[0_22px_50px_rgba(0,0,0,0.9)] transition-all duration-200">
               <h3 className="text-sm md:text-base font-semibold text-white">Legal Awareness</h3>
-              <p className="text-xs md:text-sm text-text-muted leading-relaxed">
+              <p className="text-sm text-text-muted leading-relaxed">
                 Understand the basics of how self-defense laws apply in your state.
               </p>
             </div>
 
             <div className="bg-bg-card border border-white/5 rounded-xl p-4 md:p-5 flex flex-col gap-2 shadow-[0_18px_40px_rgba(0,0,0,0.7)]/40 hover:border-white/15 hover:-translate-y-[2px] hover:shadow-[0_22px_50px_rgba(0,0,0,0.9)] transition-all duration-200">
               <h3 className="text-sm md:text-base font-semibold text-white">Home-Specific Planning</h3>
-              <p className="text-xs md:text-sm text-text-muted leading-relaxed">
+              <p className="text-sm text-text-muted leading-relaxed">
                 In-home assessments that map your actual layout, not generic theory.
               </p>
             </div>
 
             <div className="bg-bg-card border border-white/5 rounded-xl p-4 md:p-5 flex flex-col gap-2 shadow-[0_18px_40px_rgba(0,0,0,0.7)]/40 hover:border-white/15 hover:-translate-y-[2px] hover:shadow-[0_22px_50px_rgba(0,0,0,0.9)] transition-all duration-200">
               <h3 className="text-sm md:text-base font-semibold text-white">Confidence Under Pressure</h3>
-              <p className="text-xs md:text-sm text-text-muted leading-relaxed">
+              <p className="text-sm text-text-muted leading-relaxed">
                 Build the mindset and skills to act when it counts.
               </p>
             </div>
@@ -113,7 +114,7 @@ export default function Home() {
               </ul>
               <Link
                 href="/services"
-                className="inline-block text-accent-red hover:text-red-400 font-medium text-sm mt-auto transition-colors"
+                className="inline-flex min-h-11 items-center text-accent-red hover:text-red-400 font-medium text-sm mt-auto transition-colors"
               >
                 Learn More →
               </Link>
@@ -130,7 +131,7 @@ export default function Home() {
               </ul>
               <Link
                 href="/services"
-                className="inline-block text-accent-red hover:text-red-400 font-medium text-sm mt-auto transition-colors"
+                className="inline-flex min-h-11 items-center text-accent-red hover:text-red-400 font-medium text-sm mt-auto transition-colors"
               >
                 Learn More →
               </Link>
@@ -147,7 +148,7 @@ export default function Home() {
               </ul>
               <Link
                 href="/services"
-                className="inline-block text-accent-red hover:text-red-400 font-medium text-sm mt-auto transition-colors"
+                className="inline-flex min-h-11 items-center text-accent-red hover:text-red-400 font-medium text-sm mt-auto transition-colors"
               >
                 Learn More →
               </Link>
@@ -164,7 +165,7 @@ export default function Home() {
               </ul>
               <Link
                 href="/services"
-                className="inline-block text-accent-red hover:text-red-400 font-medium text-sm mt-auto transition-colors"
+                className="inline-flex min-h-11 items-center text-accent-red hover:text-red-400 font-medium text-sm mt-auto transition-colors"
               >
                 Learn More →
               </Link>
@@ -181,17 +182,18 @@ export default function Home() {
       {/* Mini About Section */}
       <section className="relative py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-neutral-900/60 scan-line">
         {/* Background Watermark Logo - Hidden on mobile */}
-        <div className="hidden md:block absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
+        <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none select-none z-0" aria-hidden="true">
           <div className="opacity-[0.025] blur-[2px] scale-[1.2]">
-            <Logo width={600} variant="dark" />
+            <Logo width={600} variant="dark" decorative />
           </div>
         </div>
         
         {/* Radial Gradient / Vignette */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-900/40 pointer-events-none z-0"></div>
         
-        <div className="max-w-3xl mx-auto px-4 md:px-6 relative z-10">
-          <Card className="text-center max-w-3xl mx-auto px-6 py-16">
+        <div className="max-w-3xl mx-auto relative z-10">
+          <Card className="text-center max-w-3xl mx-auto p-6 sm:p-10 md:p-12">
+            <h2 className="sr-only">Our Mission</h2>
             {/* Title Label */}
             <div className="flex items-center justify-center gap-2 mb-2 flex-wrap">
               <MetaLabel className="text-red-500">
@@ -201,7 +203,7 @@ export default function Home() {
             </div>
             
             {/* Mission Text */}
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-6">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-6">
               Tactical Home Solutions exists to give everyday Americans the confidence, skills, and knowledge to protect themselves and their families when seconds matter and help may be far away. Our mission is to build capable, prepared, and empowered households through realistic training, clear education, and proven defensive principles.
             </p>
             
@@ -218,4 +220,3 @@ export default function Home() {
     </div>
   );
 }
-

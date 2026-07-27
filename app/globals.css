@@ -8,27 +8,38 @@
     --foreground: 210 20% 98%;
     --card: 220 20% 6%;
     --card-foreground: 210 10% 95%;
-    --border: 215 20% 20%;
-    --input: 220 20% 8%;
-    --primary: 0 84% 60%;
-    --primary-foreground: 210 20% 98%;
+    --popover: 220 18% 9%;
+    --popover-foreground: 210 20% 98%;
+    --border: 215 15% 30%;
+    --input: 215 16% 42%;
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 220 20% 8%;
     --secondary-foreground: 210 10% 90%;
     --muted: 220 20% 6%;
-    --muted-foreground: 215 10% 45%;
+    --muted-foreground: 215 14% 70%;
     --accent: 220 20% 8%;
     --accent-foreground: 210 10% 90%;
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 210 20% 98%;
-    --ring: 0 84% 60%;
+    --destructive: 0 91% 71%;
+    --destructive-foreground: 0 40% 8%;
+    --ring: 0 91% 71%;
   }
   
   * {
     @apply border-border;
   }
+
+  html {
+    scrollbar-gutter: stable;
+  }
   
   body {
     @apply bg-background text-foreground antialiased;
+  }
+
+  button,
+  [role='button'] {
+    touch-action: manipulation;
   }
 }
 
@@ -139,3 +150,24 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .scan-line::before,
+  .pulse-soft,
+  .rotate-slow {
+    animation: none !important;
+  }
+}

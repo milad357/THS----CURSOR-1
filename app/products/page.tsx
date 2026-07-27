@@ -1,12 +1,15 @@
 import { PrimaryButton } from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Products() {
   return (
-    <div className="min-h-screen bg-bg-base pt-28 md:pt-32">
-      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 pb-16 md:pb-24">
+    <div className="bg-bg-base pt-28 md:pt-32">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 pb-12 md:pb-16">
         <div className="text-center space-y-6">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Products (Coming Soon)</h1>
+          <SectionHeading sector="SECTOR: PRODUCTS / 05">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Products (Coming Soon)</h1>
+          </SectionHeading>
 
           <Card className="p-8 md:p-12 max-w-2xl mx-auto">
             <p className="text-base md:text-lg text-text-secondary leading-relaxed mb-6">

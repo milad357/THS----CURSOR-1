@@ -2,61 +2,94 @@ import Link from 'next/link';
 import Logo from './Logo';
 import MetaLabel from './ui/MetaLabel';
 
+const footerLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Training' },
+  { href: '/surveillance', label: 'Surveillance' },
+  { href: '/products', label: 'Products' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/waiver', label: 'Waiver' },
+];
+
+const footerLinkClass =
+  'inline-flex min-h-11 min-w-11 items-center justify-center whitespace-nowrap px-1 transition-colors hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-red focus-visible:ring-offset-2 focus-visible:ring-offset-[#030509] motion-reduce:transition-none';
+
 export default function Footer() {
   return (
-    <footer className="border-t border-neutral-800/60 bg-[#030509] mt-20 relative">
+    <footer
+      id="site-footer"
+      className="relative border-t border-neutral-800/60 bg-[#030509]"
+    >
       {/* Top gradient shadow */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-b from-neutral-900/40 to-transparent"></div>
-      
+      <div
+        className="absolute inset-x-0 top-0 h-1 bg-gradient-to-b from-neutral-900/40 to-transparent"
+        aria-hidden="true"
+      />
+
       {/* Status bar */}
       <div className="border-b border-neutral-800/40">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-2">
+        <div className="mx-auto max-w-5xl px-4 py-2 md:px-6 lg:px-8">
           <MetaLabel className="text-center">
             SYSTEM STATUS: ONLINE / VERSION 3.0
           </MetaLabel>
         </div>
       </div>
-      
-      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-6 md:py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-text-muted">
-        <div className="flex items-center gap-4">
-          <div className="h-8 w-auto">
-            <Logo width={80} />
-          </div>
-          <div className="flex flex-col">
-            <span className="hidden sm:inline">Tactical Home Solutions</span>
-            <span className="text-[10px] text-neutral-600 hidden sm:inline">Operational HQ: Tactical Home Solutions</span>
-          </div>
-        </div>
-        
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-          <Link href="/" className="hover:text-text-primary transition-colors relative after:absolute after:-bottom-0.5 after:left-0 after:h-[1px] after:w-0 after:bg-accent-red hover:after:w-full after:transition-all after:duration-200">
-            Home
-          </Link>
-          <Link href="/about" className="hover:text-text-primary transition-colors relative after:absolute after:-bottom-0.5 after:left-0 after:h-[1px] after:w-0 after:bg-accent-red hover:after:w-full after:transition-all after:duration-200">
-            About Us
-          </Link>
-          <Link href="/services" className="hover:text-text-primary transition-colors relative after:absolute after:-bottom-0.5 after:left-0 after:h-[1px] after:w-0 after:bg-accent-red hover:after:w-full after:transition-all after:duration-200">
-            Services
-          </Link>
-          <Link href="/surveillance" className="hover:text-text-primary transition-colors relative after:absolute after:-bottom-0.5 after:left-0 after:h-[1px] after:w-0 after:bg-accent-red hover:after:w-full after:transition-all after:duration-200">
-            Surveillance
-          </Link>
-          <Link href="/contact" className="hover:text-text-primary transition-colors relative after:absolute after:-bottom-0.5 after:left-0 after:h-[1px] after:w-0 after:bg-accent-red hover:after:w-full after:transition-all after:duration-200">
-            Contact
-          </Link>
-        </div>
 
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center md:text-right">
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
-            <a href="mailto:info@ths247.com" className="hover:text-text-primary transition-colors">
+      <div className="mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-5 py-6 text-xs text-text-muted md:grid-cols-[minmax(0,1fr)_auto] md:gap-x-8 md:py-8 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
+          <div className="flex items-center justify-center gap-3 md:justify-start">
+            <div className="h-9 w-auto shrink-0">
+              <Logo
+                width={88}
+                decorative
+                className="!h-full !w-auto max-h-full"
+              />
+            </div>
+            <div className="hidden min-w-0 flex-col sm:flex">
+              <span className="whitespace-nowrap text-text-secondary">
+                Tactical Home Solutions
+              </span>
+              <span className="text-xs text-text-muted">
+                Operational HQ
+              </span>
+            </div>
+          </div>
+
+          <nav
+            aria-label="Footer navigation"
+            className="order-3 flex flex-wrap items-center justify-center gap-x-3 md:col-span-2 md:gap-x-5 lg:order-none lg:col-span-1 lg:flex-nowrap"
+          >
+            {footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={footerLinkClass}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <address className="flex flex-col items-center not-italic md:items-end lg:justify-self-end">
+            <a
+              href="mailto:info@ths247.com"
+              className={footerLinkClass}
+            >
               info@ths247.com
             </a>
-            <span className="hidden sm:inline">|</span>
-            <a href="tel:8188253104" className="hover:text-text-primary transition-colors duration-150">
+            <a
+              href="tel:8188253104"
+              className={footerLinkClass}
+              aria-label="Call Tactical Home Solutions at 818-825-3104"
+            >
               818-825-3104
             </a>
-          </div>
-          <p className="text-center md:text-right max-w-xs mt-2 sm:mt-0">
+          </address>
+        </div>
+
+        <div className="border-t border-neutral-800/40 py-4">
+          <p className="mx-auto max-w-3xl text-center text-xs leading-relaxed text-text-muted">
             All training is for educational and hypothetical scenarios only. For real emergencies, dial 911.
           </p>
         </div>
@@ -64,4 +97,3 @@ export default function Footer() {
     </footer>
   );
 }
-

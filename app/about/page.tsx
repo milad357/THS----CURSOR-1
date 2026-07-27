@@ -5,7 +5,7 @@ import Card from '@/components/ui/Card';
 export default function About() {
   return (
     <div className="min-h-screen bg-bg-base pt-28 md:pt-32">
-      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 pb-16 md:pb-24">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 pb-12 md:pb-16">
         <SectionHeading sector="SECTOR: MISSION BRIEFING / 04">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3 text-white">Our Mission</h1>
         </SectionHeading>
@@ -62,16 +62,13 @@ export default function About() {
             <p className="text-xl text-text-secondary">We help you be ready.</p>
           </Card>
 
-          <div className="mt-8">
-            <CTAInlineBar
-              title="Ready to get started?"
-              description="Call or text 818-825-3104 to discuss your training needs."
-              phone="8188253104"
-            />
-          </div>
+          <CTAInlineBar
+            title="Ready to get started?"
+            description="Call or text 818-825-3104 to discuss your training needs."
+            phone="8188253104"
+          />
         </div>
       </div>
     </div>
   );
 }
-
