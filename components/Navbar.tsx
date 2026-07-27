@@ -46,20 +46,18 @@ export default function Navbar() {
       className="fixed inset-x-0 top-0 z-30 border-b border-white/5 bg-[#05070D]/95 backdrop-blur-md"
       aria-label="Primary navigation"
     >
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 md:px-6 lg:px-8">
-        {/* Logo - Height: 30px mobile, 36px desktop */}
+      <div className="mx-auto flex h-[72px] max-w-5xl items-center justify-between px-4 md:h-20 md:px-6 lg:px-8 xl:h-[88px]">
         <Link
           href="/"
-          className={`flex h-11 shrink-0 items-center overflow-hidden rounded-sm ${focusRingClass}`}
+          className={`flex h-16 shrink-0 items-center rounded-sm md:h-[72px] xl:h-20 ${focusRingClass}`}
           aria-label="Tactical Home Solutions home"
         >
-          <div className="flex h-[30px] w-auto items-center md:h-[36px]">
-            <Logo
-              width={80}
-              priority
-              className="!h-full !w-auto max-h-full"
-            />
-          </div>
+          <Logo
+            width={144}
+            priority
+            decorative
+            className="!w-28 md:!w-32 xl:!w-36"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -130,10 +128,10 @@ export default function Navbar() {
       {isOpen && (
         <div
           id="mobile-navigation"
-          className="overflow-y-auto overscroll-contain border-t border-white/10 bg-bg-elevated lg:hidden"
+          className="overflow-y-auto overscroll-contain border-t border-white/10 bg-bg-elevated [--nav-height:4.5rem] md:[--nav-height:5rem] lg:hidden"
           style={{
             maxHeight:
-              'calc(100dvh - 4rem - env(safe-area-inset-bottom, 0px))',
+              'calc(100dvh - var(--nav-height) - env(safe-area-inset-bottom, 0px))',
           }}
         >
           <div className="mx-auto max-w-5xl space-y-1 px-4 py-2 md:px-6">

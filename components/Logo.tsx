@@ -67,7 +67,15 @@ export default function Logo({
   const height = Math.round(width / aspectRatio);
 
   return (
-    <div className={`inline-block ${className}`} style={{ width: `${width}px`, maxWidth: '100%', background: 'transparent' }}>
+    <div
+      className={`inline-block shrink-0 ${className}`}
+      style={{
+        width: `${width}px`,
+        maxWidth: '100%',
+        aspectRatio,
+        background: 'transparent',
+      }}
+    >
       <Image
         src={logoPath}
         alt={decorative ? '' : alt}
@@ -79,7 +87,12 @@ export default function Logo({
         loading={priority ? undefined : 'lazy'}
         sizes={`${width}px`}
         draggable={false}
-        style={{ width: '100%', height: '100%', objectFit: 'contain', background: 'transparent' }}
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain',
+          background: 'transparent',
+        }}
         onError={() => setImgError(true)}
         unoptimized={process.env.NODE_ENV === 'development'}
       />

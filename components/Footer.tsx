@@ -39,21 +39,10 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-5 py-6 text-xs text-text-muted md:grid-cols-[minmax(0,1fr)_auto] md:gap-x-8 md:py-8 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
           <div className="flex items-center justify-center gap-3 md:justify-start">
-            <div className="h-9 w-auto shrink-0">
-              <Logo
-                width={88}
-                decorative
-                className="!h-full !w-auto max-h-full"
-              />
-            </div>
-            <div className="hidden min-w-0 flex-col sm:flex">
-              <span className="whitespace-nowrap text-text-secondary">
-                Tactical Home Solutions
-              </span>
-              <span className="text-xs text-text-muted">
-                Operational HQ
-              </span>
-            </div>
+            <Logo
+              width={160}
+              className="!w-36 md:!w-40"
+            />
           </div>
 
           <nav
